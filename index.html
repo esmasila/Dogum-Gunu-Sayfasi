@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎀 İyi ki doğdun Sinem(ayı_seven35) 🎀</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.2/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Pacifico', cursive;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff4081;
+            font-size: 6vw;
+            text-shadow: 3px 3px 15px rgba(255, 105, 180, 0.9);
+            margin: 10px;
+            text-align: center;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 15px rgba(255, 105, 180, 0.9); }
+            to { text-shadow: 3px 3px 25px rgba(255, 105, 180, 1); }
+        }
+
+        .big-text {
+            position: absolute;
+            font-size: 6vw;
+            color: purple;
+            text-shadow: 4px 4px 20px black;
+            font-weight: bold;
+            display: none;
+            max-width: 80vw;
+            word-wrap: break-word;
+            text-align: center;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+            justify-content: center;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .button {
+            background: rgba(255, 255, 255, 0);
+            color: black;
+            font-size: 4vw;
+            padding: 2vw;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0);
+            border: none;
+            min-width: 20vw;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="background-music" autoplay loop>
+    <source src="https://www.mboxdrive.com/ismail_yk_bas_gaza.mp3" type="audio/mp3">
+</audio>
+
+<h1>🎀 İYİ Kİ DOĞDUN AYI_SEVEN35! SENİ ÇOK SEVİYORUM, NİCE MUTLU SENELERE 🎀</h1>
+
+<div class="button-container">
+    <button class="button" onclick="ayrilKnk()">💡</button>
+    <button class="button" onclick="surprise()">🎉Bas Bana🎉</button>
+</div>
+
+<div id="bigText" class="big-text">AYRIL KNK</div>
+
+<script>
+    function ayrilKnk() {
+        let text = document.getElementById("bigText");
+        text.style.display = "block";
+        let maxTop = window.innerHeight - text.clientHeight - 50;
+        let maxLeft = window.innerWidth - text.clientWidth - 50;
+        text.style.top = Math.max(10, Math.random() * maxTop) + "px";
+        text.style.left = Math.max(10, Math.random() * maxLeft) + "px";
+        setTimeout(() => { text.style.display = "none"; }, 5000);
+    }
+
+    function surprise() {
+        confetti({
+            particleCount: 200,
+            spread: 100,
+            startVelocity: 40,
+            origin: { x: 0.5, y: 0.5 }
+        });
+    }
+</script>
+
+</body>
+</html>
